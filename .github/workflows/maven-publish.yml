@@ -31,7 +31,8 @@ jobs:
           port: 22
           source: target/*.war
           target: /var/lib/tomcat10/webapps/
-          strip_components: 0
+          script: |
+            mv /var/lib/tomcat10/webapps/target/* /var/lib/tomcat10/webapps/
 
       - name: Restart Tomcat
         uses: appleboy/ssh-action@v1.0.3
